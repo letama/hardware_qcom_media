@@ -1253,7 +1253,7 @@ OMX_U32 venc_dev::pmem_allocate(OMX_U32 size, OMX_U32 alignment, OMX_U32 count)
   recon_buff[count].alloc_data.len = size;
   recon_buff[count].alloc_data.flags = (ION_HEAP(MEM_HEAP_ID) |
                   (venc_encoder->is_secure_session() ? ION_SECURE
-                   : ION_HEAP(ION_IOMMU_HEAP_ID)));
+                   : ION_HEAP(MEM_HEAP_ID)));
   recon_buff[count].alloc_data.align = clip2(alignment);
   if (recon_buff[count].alloc_data.align != 8192)
     recon_buff[count].alloc_data.align = 8192;
